@@ -17,7 +17,7 @@ void OrderSystem::processOrder()
     if (isEnoughMoney(cost))
     {   
         std::cout << "Deliver order" << std::endl;
-        m_deliveryMethod.get()->deliverOrder();
+        m_deliveryMethod->deliverOrder();
     }
 
     if (m_money < 100)
@@ -34,5 +34,5 @@ bool OrderSystem::isEnoughMoney(int money)
 
 int OrderSystem::calculateOrderCost(int distance)
 {
-    return m_deliveryMethod.get()->calculateCost(distance);
+    return m_deliveryMethod->calculateCost(distance);
 }
